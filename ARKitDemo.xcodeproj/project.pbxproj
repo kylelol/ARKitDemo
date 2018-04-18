@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		3D53ACFC2086B88000A02C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53ACFB2086B88000A02C73 /* AppDelegate.swift */; };
 		3D53ACFE2086B88000A02C73 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D53ACFD2086B88000A02C73 /* art.scnassets */; };
-		3D53AD002086B88000A02C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53ACFF2086B88000A02C73 /* ViewController.swift */; };
 		3D53AD032086B88000A02C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D53AD012086B88000A02C73 /* Main.storyboard */; };
 		3D53AD052086B88200A02C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D53AD042086B88200A02C73 /* Assets.xcassets */; };
 		3D53AD082086B88200A02C73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D53AD062086B88200A02C73 /* LaunchScreen.storyboard */; };
+		3D53AD102086BA6300A02C73 /* SCNVector3Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53AD0F2086BA6300A02C73 /* SCNVector3Math.swift */; };
+		3D53AD122086BBA300A02C73 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53AD112086BBA300A02C73 /* UIViewController+Utils.swift */; };
+		3D53AD162086BC6700A02C73 /* SCNNodeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53AD152086BC6700A02C73 /* SCNNodeHelpers.swift */; };
+		3D53AD1C2086BEDA00A02C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53AD1B2086BEDA00A02C73 /* ViewController.swift */; };
+		3D53AD1E2086C10400A02C73 /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53AD1D2086C10400A02C73 /* HighlightedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D53ACF82086B88000A02C73 /* ARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D53ACFB2086B88000A02C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D53ACFD2086B88000A02C73 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		3D53ACFF2086B88000A02C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D53AD022086B88000A02C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D53AD042086B88200A02C73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D53AD072086B88200A02C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D53AD092086B88200A02C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D53AD0F2086BA6300A02C73 /* SCNVector3Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3Math.swift; sourceTree = "<group>"; };
+		3D53AD112086BBA300A02C73 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		3D53AD152086BC6700A02C73 /* SCNNodeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNNodeHelpers.swift; sourceTree = "<group>"; };
+		3D53AD1B2086BEDA00A02C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3D53AD1D2086C10400A02C73 /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,15 @@
 			children = (
 				3D53ACFB2086B88000A02C73 /* AppDelegate.swift */,
 				3D53ACFD2086B88000A02C73 /* art.scnassets */,
-				3D53ACFF2086B88000A02C73 /* ViewController.swift */,
-				3D53AD012086B88000A02C73 /* Main.storyboard */,
 				3D53AD042086B88200A02C73 /* Assets.xcassets */,
 				3D53AD062086B88200A02C73 /* LaunchScreen.storyboard */,
 				3D53AD092086B88200A02C73 /* Info.plist */,
+				3D53AD0F2086BA6300A02C73 /* SCNVector3Math.swift */,
+				3D53AD112086BBA300A02C73 /* UIViewController+Utils.swift */,
+				3D53AD152086BC6700A02C73 /* SCNNodeHelpers.swift */,
+				3D53AD1B2086BEDA00A02C73 /* ViewController.swift */,
+				3D53AD012086B88000A02C73 /* Main.storyboard */,
+				3D53AD1D2086C10400A02C73 /* HighlightedButton.swift */,
 			);
 			path = ARKitDemo;
 			sourceTree = "<group>";
@@ -139,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D53AD002086B88000A02C73 /* ViewController.swift in Sources */,
+				3D53AD1C2086BEDA00A02C73 /* ViewController.swift in Sources */,
+				3D53AD1E2086C10400A02C73 /* HighlightedButton.swift in Sources */,
+				3D53AD162086BC6700A02C73 /* SCNNodeHelpers.swift in Sources */,
 				3D53ACFC2086B88000A02C73 /* AppDelegate.swift in Sources */,
+				3D53AD102086BA6300A02C73 /* SCNVector3Math.swift in Sources */,
+				3D53AD122086BBA300A02C73 /* UIViewController+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34UDU57LAY;
 				INFOPLIST_FILE = ARKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34UDU57LAY;
 				INFOPLIST_FILE = ARKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

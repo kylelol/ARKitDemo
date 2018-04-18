@@ -7,74 +7,91 @@
 //
 
 import UIKit
-import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
-
+class ViewController: UIViewController {
+    
+    enum Intent {
+        case none
+        case placeObject(String)
+        case measure
+    }
+    
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var chairButton: UIButton!
+    @IBOutlet weak var candleButton: UIButton!
+    @IBOutlet weak var measureButton: UIButton!
+    @IBOutlet weak var vaseButton: UIButton!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var crosshair: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var trackingInfo: UILabel!
+    
+    var currentIntent: Intent = .none
+    var objects: [SCNNode] = []
+    var measuringNodes: [SCNNode] = []
+    
+    // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Set the view's delegate
-        sceneView.delegate = self
-        
-        // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
-        
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
 
-        // Run the view's session
-        sceneView.session.run(configuration)
+        trackingInfo.text = ""
+        messageLabel.text = ""
+        distanceLabel.isHidden = true
+        selectVase()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Pause the view's session
-        sceneView.session.pause()
+    // MARK: Actions
+    
+    @IBAction func didTapChairButton(_ sender: Any) {
+        currentIntent = .placeObject("Models.scnassets/chair/chair.scn")
+        selectButton(chairButton)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
+    @IBAction func didTapCandleButton(_ sender: Any) {
+        currentIntent = .placeObject("Models.scnassets/candle/candle.scn")
+        selectButton(candleButton)
+    }
+    
+    @IBAction func didTapMeasureButton(_ sender: Any) {
+        currentIntent = .measure
+        selectButton(measureButton)
+    }
+    
+    @IBAction func didTapVaseButton(_ sender: Any) {
+        selectVase()
+    }
+    
+    @IBAction func didTapResetButton(_ sender: Any) {
+        removeAllObjects()
+        distanceLabel.text = ""
     }
 
-    // MARK: - ARSCNViewDelegate
+    // MARK: Helpers
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
+    private func selectVase() {
+        currentIntent = .placeObject("Models.scnassets/vase/vase.scn")
+        selectButton(vaseButton)
     }
-*/
     
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
+    private func selectButton(_ button: UIButton) {
+        unselectAllButtons()
+        button.isSelected = true
+    }
+    
+    private func unselectAllButtons() {
+        [chairButton, candleButton, measureButton, vaseButton].forEach { button in
+            button?.isSelected = false
+        }
+    }
+    
+    private func removeAllObjects() {
+        objects.forEach { node in
+            node.removeFromParentNode()
+        }
         
+        objects = []
     }
     
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
-    }
 }
