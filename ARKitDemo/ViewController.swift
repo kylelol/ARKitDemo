@@ -45,12 +45,12 @@ class ViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func didTapChairButton(_ sender: Any) {
-        currentIntent = .placeObject("Models.scnassets/chair/chair.scn")
+        currentIntent = .placeObject("art.scnassets/chair/chair.scn")
         selectButton(chairButton)
     }
     
     @IBAction func didTapCandleButton(_ sender: Any) {
-        currentIntent = .placeObject("Models.scnassets/candle/candle.scn")
+        currentIntent = .placeObject("art.scnassets/candle/candle.scn")
         selectButton(candleButton)
     }
     
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     // MARK: Helpers
     
     private func selectVase() {
-        currentIntent = .placeObject("Models.scnassets/vase/vase.scn")
+        currentIntent = .placeObject("art.scnassets/vase/vase.scn")
         selectButton(vaseButton)
     }
     
